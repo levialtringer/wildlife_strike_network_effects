@@ -93,3 +93,5 @@ Wildlife Strike Database search tool.
 ## Relationship & Join Logic
 The datasets can be joined on the `strike_index_nr` and `index_nr` fields in 
 the `flight_data.parquet` and `strike_data.parquet`, respectively. 
+
+<br>
