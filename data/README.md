@@ -7,6 +7,8 @@ This dataset is a multi-source, integrated snapshot of flight performance in the
 
 **Relationship:** Every flight in the primary file is associated with a wildlife strike record in the support file based on proximity (±48-hour window at the strike flight's destination airport).
 
+<br>
+
 ---
 
 ## File 1: `flight_data.parquet` (Flight Observations)
