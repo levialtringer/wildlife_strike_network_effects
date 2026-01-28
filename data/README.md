@@ -61,7 +61,7 @@ This is the core observation file. Each row represents a flight departure.
 | `strike_damage` | Binary indicator (1 = Damage Indicated, 0 = No Damage Indicated). |
 ---
 
-## File 2: `strike_data.parquet` (FAA Wildlife Strike Database)
+## File 2: `strike_data.parquet` (Strike Incidents)
 This file contains the specific details of the wildlife collision events as recorded in the FAA database. Variable
 definitions and descriptions are located in the `strike_metadata.xlsx` file, which is drawn directly from the FAA's
 Wildlife Strike Database search tool.
