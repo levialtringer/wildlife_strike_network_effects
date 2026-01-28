@@ -1,7 +1,5 @@
 
-# Dataset: Flight Perfromance in Proximity to Wildlife Strike Incidents
-
-## Overview
+## Dataset Overview
 This dataset is a multi-source, integrated snapshot of flight performance in the context of wildlife strike incidents. It is split into two relational files.
 
 * **Primary File:** `flight_data.parquet` (Table with ~2M flight observations)
