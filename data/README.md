@@ -1,7 +1,8 @@
 
-# Dataset: Flight Perfromance in Proximity to Wildlife Strike Incidents
+# Dataset Overview
 
-## Overview
+<br>
+
 This dataset is a multi-source, integrated snapshot of flight performance in the context of wildlife strike incidents. It is split into two relational files.
 
 * **Primary File:** `flight_data.parquet` (Table with ~2M flight observations)
@@ -9,12 +10,27 @@ This dataset is a multi-source, integrated snapshot of flight performance in the
 
 **Relationship:** Every flight in the primary file is associated with a wildlife strike record in the support file based on proximity (±48-hour window at the strike flight's destination airport).
 
+<br>
+
 ---
+
+<br>
+
+## Data Sources
+* **Flight/On-Time Data:** [Bureau of Transportation Statistics (BTS)](https://www.transtats.bts.gov/ontime/)
+* **Weather Data:** [Visual Crossing API](https://www.visualcrossing.com/)
+* **Wildlife Strike Data:** [FAA Wildlife Strike Database](https://wildlife.faa.gov/search)
+
+<br>
+
+---
+
+<br>
 
 ## File 1: `flight_data.parquet` (Flight Observations)
 This is the core observation file. Each row represents a flight departure.
 
-### ✈️ Flight & Airline Variables (BTS)
+### Flight & Airline Variables (BTS)
 | Variable | Description |
 | :--- | :--- |
 | `airport` | Origin airport code (IATA). |
@@ -38,7 +54,7 @@ This is the core observation file. Each row represents a flight departure.
 | `delay_security_minutes` | Attribution of delay to security breaches or terminal evacuations. |
 | `delay_late_aircraft_arrival_minutes` | Attribution of delay to ripple effect from previous delayed flights. |
 
-### 🌦️ Meteorological Variables (Visual Crossing)
+### Meteorological Variables (Visual Crossing)
 | Variable | Description |
 | :--- | :--- |
 | `temp` / `feelslike` | Temperature and "apparent" temperature. |
@@ -50,7 +66,7 @@ This is the core observation file. Each row represents a flight departure.
 | `solarenergy` / `uvindex` | Solar intensity (MJ/m²) and UV index. |
 | `conditions` / `icon` | Text and categorical weather descriptions. |
 
-### 🦅 Wildlife Strike Variables (FAA)
+### Wildlife Strike Variables (FAA)
 | Variable | Description |
 | :--- | :--- |
 | `strike_index_nr` | Unique ID from the FAA database. |
@@ -59,22 +75,26 @@ This is the core observation file. Each row represents a flight departure.
 | `strike_date_time` | Timestamp of the wildlife collision, if available. |
 | `strike_arrival_departure` | Phase of flight during the strike event (Arrival or Departure). |
 | `strike_damage` | Binary indicator (1 = Damage Indicated, 0 = No Damage Indicated). |
+
+<br>
+
 ---
 
-## File 2: `strike_data.parquet` (FAA Wildlife Strike Database)
-This file contains the specific details of the wildlife collision events as recorded in the FAA database. Variable
+<br>
+
+## File 2: `strike_data.parquet` (Strike Incidents)
+This file contains the specific details of the wildlife collision events as recorded in the FAA Wildlife Strike Database. Variable
 definitions and descriptions are located in the `strike_metadata.xlsx` file, which is drawn directly from the FAA's
 Wildlife Strike Database search tool.
 
+<br>
+
 ---
+
+<br>
 
 ## Relationship & Join Logic
 The datasets can be joined on the `strike_index_nr` and `index_nr` fields in 
 the `flight_data.parquet` and `strike_data.parquet`, respectively. 
 
----
-
-## Data Sources
-* **Flight/On-Time Data:** [Bureau of Transportation Statistics (BTS)](https://www.transtats.bts.gov/ontime/)
-* **Weather Data:** [Visual Crossing API](https://www.visualcrossing.com/)
-* **Wildlife Strike Data:** [FAA Wildlife Strike Database](https://wildlife.faa.gov/search)
+<br>
