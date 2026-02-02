@@ -3,3 +3,6 @@
 
 # Results files
 results/
+
+# Rhistory
+.Rhistory
