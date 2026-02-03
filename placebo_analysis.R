@@ -209,12 +209,12 @@ run_actual_bootstrap_analysis <- function(n_iterations, damage_val, arr_dep_val,
   return(final_df)
 }
 
-placebo_non_dam_arrival <- run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Arrival", dv = "departure_delay_minutes")
-placebo_dam_arrival <- run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Arrival", dv = "departure_delay_minutes")
-placebo_non_dam_departure <- run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Departure", dv = "departure_delay_minutes")
-placebo_dam_departure <- run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Departure", dv = "departure_delay_minutes")
+run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Arrival", dv = "departure_delay_minutes")
+run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Arrival", dv = "departure_delay_minutes")
+run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Departure", dv = "departure_delay_minutes")
+run_placebo_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Departure", dv = "departure_delay_minutes")
 
-actual_non_dam_arrival <- run_actual_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Arrival", dv = "departure_delay_minutes")
-actual_dam_arrival <- run_actual_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Arrival", dv = "departure_delay_minutes")
-actual_non_dam_departure <- run_actual_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Departure", dv = "departure_delay_minutes")
-actual_dam_departure <- run_actual_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Departure", dv = "departure_delay_minutes")
+run_actual_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Arrival", dv = "departure_delay_minutes")
+run_actual_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Arrival", dv = "departure_delay_minutes")
+run_actual_bootstrap_analysis(n_iterations = 500, damage_val=0, arr_dep_val="Departure", dv = "departure_delay_minutes")
+run_actual_bootstrap_analysis(n_iterations = 500, damage_val=1, arr_dep_val="Departure", dv = "departure_delay_minutes")
