@@ -3,6 +3,7 @@
 
 # Results files
 results/
+bootstrap_results/
 
 # Rhistory
 .Rhistory
